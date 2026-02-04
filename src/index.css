@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-light text-secondary antialiased;
+        font-family: 'Cairo', 'Inter', sans-serif;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        @apply bg-light;
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 rounded-full hover:bg-primary transition-colors;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-primary/40 active:scale-95;
+    }
+    .btn-secondary {
+        @apply bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-secondary/40 active:scale-95;
+    }
+    .btn-action {
+        @apply bg-action text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-800 transition-all shadow-lg hover:shadow-action/40 active:scale-95;
+    }
+    .card-hover {
+        @apply hover:-translate-y-2 transition-transform duration-300 ease-out;
+    }
+}
+
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-flow 6s ease infinite;
+}
